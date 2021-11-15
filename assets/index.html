@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="https://unpkg.com/vue@next"></script>
+    <script defer src="scripts/script.js"></script>
+
+    <title>Carte de visite</title>
+  </head>
+  <body>
+    <div id="root">
+      <div id="container" :class="theme">
+        <div class="head">
+          <h4>Carte de visite</h4>
+          <h4>{{name}}</h4>
+        </div>
+        <div class="middle">
+          <p>{{compagny}}</p>
+          <p>{{job}}</p>
+        </div>
+        <div class="bottom">
+          <p>{{email}}</p>
+          <p>{{phone}}</p>
+        </div>
+        <button v-on:click="switchColor">Switch color</button>
+      </div>
+      <div id="containerForm" class="styleForm">
+            <!-- <form> -->
+                <div class="name">
+                    <label>Non et prénom : </label>
+                    <input type="text" id="name" name="name" v-on:input ="changeValue"/>
+                </div>
+                </br>
+            <div class="emploi">
+                    <label>Entreprise : </label>
+                    <input type="text" id="compagny" name="compagny" v-on:input ="changeValue" />
+                </br>
+                    <label>Emploi : </label>
+                    <input type="text" id="job" name="job" v-on:input ="changeValue"/>
+            </div>
+                </br>
+            <div class="contact">
+                    <label>E-mail : </label>
+                    <input type="email" id="email" name="email" v-on:input ="changeValue"/>
+                </br>
+                    <label>Téléphone : </label>
+                    <input type="tel" id="telephone" name="telephone" v-on:input ="changeValue"/>
+            </div>
+            <!-- </form> -->
+        </div>
+    </div>
+  </body>
+</html>
